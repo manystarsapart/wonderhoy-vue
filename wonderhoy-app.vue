@@ -2,12 +2,7 @@
 
 import { ref } from 'vue'
 
-const count = ref(0)
-
-function increment() {
-  count.value++
-}
-
+const message = ref('test')
 
 
 </script>
@@ -15,11 +10,9 @@ function increment() {
 
 <template>
 
-<button @click="increment">
-    {{ count }}
-  </button>
-
-
+  <div>
+    {{ message }}
+  </div>
 
 
 </template>
