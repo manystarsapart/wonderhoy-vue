@@ -1,27 +1,33 @@
 <script setup>
 
-let name = 'test';
+import { ref } from 'vue'
+
+const count = ref(0)
+
+function increment() {
+  count.value++
+}
+
+
 
 </script>
 
 
-
 <template>
 
-<h1 id="app">name: {test}</h1>
+<button @click="increment">
+    {{ count }}
+  </button>
+
 
 
 
 </template>
 
 
+
 <style lang="css">
 
-h1 {
-    font-size:50px;
-    font-family: 'Courier New', Courier, monospace;
-
-}
 
 
 </style>
