@@ -1,6 +1,6 @@
 <script setup>
 
-import { reactive, ref } from 'vue'
+import { reactive, ref, computed } from 'vue'
 
 // note:
 // ref is used when defining primitive obeject, 
@@ -22,6 +22,7 @@ function increment() {
 
 const text = ref('')
 
+const showHeading = computed(() => text.value === 'open sesame')
 
 </script>
 
@@ -32,13 +33,8 @@ const text = ref('')
     {{ message }}
   </div>
 
-  <div v-bind:id=redClass>
-    red text    
-  </div>
-
-  <div :id=redClass>
-    red text but using v-bind shorthand 
-  </div>
+  <div v-bind:id=redClass>red text shown using "v-bind:id" in full </div>
+  <div :id=redClass>red text but using ":id" shorthand</div>
 
   <hr>
 
@@ -54,8 +50,12 @@ const text = ref('')
   <!-- v-model works for other input types as well -->
   <p>{{ text }}</p>
 
+  <hr>
 
-
+  <p>the heading below will only show if input box contains "open sesame"</p>
+  <h1 v-if="showHeading">woah! you found the secret</h1>
+  <h1 v-else>nothing to see here</h1>
+  
 </template>
 
 
