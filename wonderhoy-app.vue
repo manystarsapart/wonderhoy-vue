@@ -12,7 +12,7 @@ import { reactive, ref } from 'vue'
 
 
 const message = ref('test')
-const counter = ref({ count: 0, message: 'ball' })
+const counter = reactive({ count: 0, message: 'ball' })
 
 const redClass = ref('dynamicId')
 
@@ -20,7 +20,7 @@ function increment() {
   counter.count++;
 }
 
-const reactive = ref('')
+const text = ref('')
 
 
 </script>
@@ -48,6 +48,11 @@ const reactive = ref('')
 
   <p>count is {{ counter.count }}</p>
 
+  <hr>
+  <input v-model="text" placeholder="Type here">
+  <!-- v-model automatically syncs input value with the bound state -->
+  <!-- v-model works for other input types as well -->
+  <p>{{ text }}</p>
 
 
 
