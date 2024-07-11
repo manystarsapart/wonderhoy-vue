@@ -7,6 +7,10 @@ const counter = reactive({ count: 0 })
 
 const redClass = ref('dynamicId')
 
+function increment() {
+  counter.count++;
+}
+
 </script>
 
 
@@ -15,7 +19,6 @@ const redClass = ref('dynamicId')
   <div>
     {{ message }}
   </div>
-  <p>count is {{ counter.count }}</p>
 
   <div v-bind:id=redClass>
     red text    
@@ -24,6 +27,15 @@ const redClass = ref('dynamicId')
   <div :id=redClass>
     red text but using v-bind shorthand 
   </div>
+
+  <hr>
+
+  <div>
+    <button @click="increment">click me to increase count</button>
+  </div>
+
+  <p>count is {{ counter.count }}</p>
+
 
 </template>
 
