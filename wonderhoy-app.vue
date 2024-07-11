@@ -2,14 +2,26 @@
 
 import { reactive, ref } from 'vue'
 
+// note:
+// ref is used when defining primitive obeject, 
+// ref is limited to .value property
+
+// reactive is best for objects with multiple properties
+
+
+
+
 const message = ref('test')
-const counter = reactive({ count: 0 })
+const counter = ref({ count: 0, message: 'ball' })
 
 const redClass = ref('dynamicId')
 
 function increment() {
   counter.count++;
 }
+
+const reactive = ref('')
+
 
 </script>
 
@@ -35,6 +47,8 @@ function increment() {
   </div>
 
   <p>count is {{ counter.count }}</p>
+
+
 
 
 </template>
