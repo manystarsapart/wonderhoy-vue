@@ -71,7 +71,7 @@ function removeTodo(todo) {
   
   <hr>
 
-    <form @submit.prevent="addTodo"> 
+    <form @submit.prevent="addTodo"> <!-- also prevents website from reloading (default) on form submission -->
       <input v-model="newTodo" required placeholder="new todo">
       <button>add todo</button>
     </form>
